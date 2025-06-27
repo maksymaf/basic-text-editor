@@ -27,11 +27,11 @@
             <i class="fa-solid fa-xmark" id="close-popup"></i>
         </div>
         <div class="radio-container">
-            <label for="table-radio">
+            <label for="table-radio" class="radio-label">
                 <input type="radio" id="table-radio" name="table-list-radio" value="table">
                 Таблиця
             </label>
-            <label for="list-radio">
+            <label for="list-radio" class="radio-label">
                 <input type="radio" id="list-radio" name="table-list-radio" value="list">
                 Список
             </label>
@@ -75,11 +75,11 @@
         </div>
         <div class="wrapper-list">
             <div class="radio-container">
-                <label for="ol-radio">
+                <label for="ol-radio" class="radio-label">
                     <input type="radio" id="ol-radio" name="ol-ul-radio" value="ol">
                     Порядковий
                 </label>
-                <label for="ul-radio">
+                <label for="ul-radio" class="radio-label">
                     <input type="radio" id="ul-radio" name="ol-ul-radio" value="ul">
                     Маркований
                 </label>
@@ -95,6 +95,10 @@
     </div>
 
     <div class="pop-up" id="stylise-popup">
+        <div class="upper-container">
+            <h2>Стилізація</h2>
+            <i class="fa-solid fa-xmark" id="close-popup-2"></i>
+        </div>
         <div class="font-size-row">
             <p>Розмір тексту: </p>
             <label for="tiny">
@@ -117,8 +121,6 @@
                 <input type="radio" name="font-size-radio" id="large" value="20px">
                 20px
             </label>
-            <i class="fa-solid fa-xmark" id="close-popup-2"></i>
-
         </div>
         <div class="font-family-row">
             <p>Шрифт: 
@@ -159,7 +161,9 @@
             <button class="stylise-btn">Стилізувати</button>
         </div>
         <div class="code-editor">
+            <p>index.html</p>
             <textarea id="html-code"></textarea>
+            <p>style.css</p>
             <textarea id="css-code"></textarea>
             <div class="btn-container">
                 <button class="save-btn">Зберегти</button>
