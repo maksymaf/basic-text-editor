@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Montserrat Alternates -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="pop-up" id="create-popup">
+        <div class="upper-container">
+            <h2>Що саме ви хочете додати?</h2>
+            <i class="fa-solid fa-xmark" id="close-popup"></i>
+        </div>
+        <div class="radio-container">
+            <label for="table-radio">
+                <input type="radio" id="table-radio" name="table-list-radio" value="table">
+                Таблиця
+            </label>
+            <label for="list-radio">
+                <input type="radio" id="list-radio" name="table-list-radio" value="list">
+                Список
+            </label>
+        </div>
+        <div class="wrapper-table">
+            <label for="rows-amount">
+                Введіть кількість рядків таблиці: 
+                <input type="number" id="rows-amount" placeholder="N">
+            </label>
+            <label for="cols-amount">
+                Введіть кількість стовпців таблиці: 
+                <input type="number" id="cols-amount" placeholder="N">
+            </label>
+            <h2>Стилізуйте таблицю:</h2>
+            <label for="table-cell-width">
+                Ширина комірки таблиці:
+                <input type="number" id="table-cell-width" placeholder="px">
+            </label>
+            <label for="table-cell-height">
+                Висота комірки таблиці:
+                <input type="number" id="table-cell-height" placeholder="px">
+            </label>
+            <label for="table-border-width">
+                Товщина лінії:
+             <input type="number" id="table-border-width" placeholder="px">
+            </label>
+            <label for="table-border-type">
+                Тип лінії:
+                <select id="table-border-type">
+                    <option value="solid">solid</option>
+                    <option value="dashed">dashed</option>
+                </select>
+            </label>
+            <label for="table-border-color">
+                Колір лінії:
+                <input type="color" id="table-border-color">
+            </label>
+            <div class="create-btn-container">
+                <button class="create" id="create-table">Створити</button>
+            </div>
+        </div>
+        <div class="wrapper-list">
+            <div class="radio-container">
+                <label for="ol-radio">
+                    <input type="radio" id="ol-radio" name="ol-ul-radio" value="ol">
+                    Порядковий
+                </label>
+                <label for="ul-radio">
+                    <input type="radio" id="ul-radio" name="ol-ul-radio" value="ul">
+                    Маркований
+                </label>
+            </div>
+            <label for="list-items-amount" class="list-length-label">
+                Довжина списку:
+                <input type="number" id="list-items-amount" placeholder="N">
+            </label>
+            <div class="create-btn-container">
+                <button class="create" id="create-list">Створити</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pop-up" id="stylise-popup">
+        <div class="font-size-row">
+            <p>Розмір тексту: </p>
+            <label for="tiny">
+                <input type="radio" name="font-size-radio" id="tiny" value="12px">
+                12px
+            </label>
+            <label for="small">
+                <input type="radio" name="font-size-radio" id="small" value="14px">
+                14px
+            </label>
+            <label for="default">
+                <input type="radio" name="font-size-radio" id="default" value="16px" checked>
+                16px
+            </label>
+            <label for="big">
+                <input type="radio" name="font-size-radio" id="big" value="18px">
+                18px
+            </label>
+            <label for="large">
+                <input type="radio" name="font-size-radio" id="large" value="20px">
+                20px
+            </label>
+            <i class="fa-solid fa-xmark" id="close-popup-2"></i>
+
+        </div>
+        <div class="font-family-row">
+            <p>Шрифт: 
+                <select id="font-family-choice">
+                    <option value="Times">Times</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Consolas">Consolas</option>
+                </select>
+            </p>
+        </div>
+        <div class="colors-row">
+            <label for="text-color">
+                Колір тексту:
+                <input type="color" id="text-color">
+            </label>
+            <label for="background-color">
+                Колір фону:
+                <input type="color" id="background-color">
+            </label>
+        </div>
+        <div class="font-style-row">
+            <label for="italic">
+                Italic:
+                <input type="checkbox" id="italic" value="italic">
+            </label>
+            <label for="bold">
+                Bold:
+                <input type="checkbox" id="bold" value="bold">
+            </label>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <iframe id="code-result"></iframe>
+        <div class="btn-container">
+            <button class="edit-btn">Редагувати</button>
+            <button class="stylise-btn">Стилізувати</button>
+        </div>
+        <div class="code-editor">
+            <textarea id="html-code"></textarea>
+            <textarea id="css-code"></textarea>
+            <div class="btn-container">
+                <button class="save-btn">Зберегти</button>
+                <button class="add-btn">Додати</button>
+                <button class="clear-btn">Очистити</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
